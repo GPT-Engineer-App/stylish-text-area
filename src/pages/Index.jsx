@@ -16,7 +16,7 @@ const Index = () => {
             }}
           />
         </div>
-        <div className="absolute -top-4 left-1/2 w-8 h-8 bg-white border-4 border-b-0 border-r-0 border-black transform -rotate-45 -translate-x-1/2 shadow-lg"></div>
+        <div className="absolute -top-4 right-1/2 w-8 h-8 bg-white border-4 border-b-0 border-l-0 border-black transform rotate-45 translate-x-1/2 shadow-lg"></div>
       </div>
     </div>
   );
