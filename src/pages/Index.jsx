@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import { Button } from "@/components/ui/button";
+import { Pencil, Trash2 } from 'lucide-react';
 
 const Index = () => {
   const [text, setText] = useState("Hi!\nYou're about to make\ngreat friends + support\nwonderful causes!");
@@ -12,18 +14,23 @@ const Index = () => {
   }, [text]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-yellow-300 p-4">
-      <div className="relative max-w-md w-full">
-        <div className="bg-white border-4 border-black rounded-lg p-4 pb-12">
-          <textarea
-            ref={textareaRef}
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            className="w-full bg-transparent text-2xl font-bold resize-none overflow-hidden"
-            style={{ outline: 'none' }}
-          />
+    <div className="min-h-screen flex items-center justify-center bg-yellow-400 p-4">
+      <div className="max-w-md w-full bg-white border-8 border-black shadow-[8px_8px_0_0_#000] p-6 rounded-none">
+        <textarea
+          ref={textareaRef}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          className="w-full bg-transparent text-3xl font-bold resize-none overflow-hidden mb-4"
+          style={{ outline: 'none' }}
+        />
+        <div className="flex justify-between">
+          <Button className="bg-green-500 hover:bg-green-600 text-black font-bold py-2 px-4 rounded-none border-4 border-black shadow-[4px_4px_0_0_#000]">
+            <Pencil className="mr-2 h-4 w-4" /> Edit
+          </Button>
+          <Button className="bg-red-500 hover:bg-red-600 text-black font-bold py-2 px-4 rounded-none border-4 border-black shadow-[4px_4px_0_0_#000]">
+            <Trash2 className="mr-2 h-4 w-4" /> Delete
+          </Button>
         </div>
-        <div className="absolute -bottom-4 left-8 w-8 h-8 bg-white border-4 border-t-0 border-r-0 border-black transform -rotate-45"></div>
       </div>
     </div>
   );
